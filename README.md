@@ -43,3 +43,52 @@ into Cart.
 
 b . Checkout -
 Is an Get APi which will take CustomerId as an input to fetch the details of the Billing.
+
+Add to Cart - 
+-----------------------
+Sample post request:
+
+{
+    "customerId":12,
+    "customerName":"Vishnu",
+    "contactNumber:"8937584539",
+    "productDetailsList":
+    [
+     {
+      "productId":12,
+     "productName":"Pen",
+     "price":50,
+     "categoryId":25,
+     "categoryName":"Management"
+     }
+    ]
+} 
+
+
+Checkout -
+----------------
+Sample get Request:
+http://localhost:8080/receipt?customerId=12
+
+Get response:
+{
+    "customerDetails": {
+        "customerId": 12,
+        "customerName": "Vishnu"
+        "contactNumber":"8937584539"
+    },
+    "productList": [
+        {
+            "customerId": 12,
+            "productId": 101,
+            "productName": "PENCIL",
+            "price": 50.0
+            "categoryId":25,
+    		"categoryName":"Management"
+        }
+    ],
+    "salesTax": 3.5000000000000004,
+    "vatTax": 2.0,
+    "discount": 0.0,
+    "total": 56
+}
