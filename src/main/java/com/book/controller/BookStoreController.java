@@ -25,6 +25,7 @@ public class BookStoreController {
 		
 		logger.info("Entering into Add to Cart Details");
 		Response response=bookService.addToCartDetails(request);
+		System.out.println("added new line");
 		return response;
 	}
 
